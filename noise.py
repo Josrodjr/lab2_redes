@@ -21,4 +21,4 @@ def add_noise(binary_string, probability_of_noise):
     return noised_string
 
 # test the noise at 50% probability 
-#print(add_noise('01001', 0.5))
+# print(add_noise('1110000011001010111000001100001011100000110110001110011', 0.1))
