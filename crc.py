@@ -34,9 +34,7 @@ def mod2div(divident, divisor):
     checkword = tmp 
     return checkword 
    
-# Function used at the receiver side to decode  
-# data received by sender 
-def crc(data, key): 
+def decodeData(data, key): 
    
     l_key = len(key) 
 
@@ -44,3 +42,16 @@ def crc(data, key):
     remainder = mod2div(appended_data, key) 
    
     return remainder 
+
+def crc(data):
+    ans = decodeData(data, "1011") 
+    #print("Remainder after decoding is->"+ans) 
+        
+    # If remainder is all zeros then no error occured 
+    temp = "0" * (len("1011") - 1) 
+    noerror = 'No error FOUND'
+    error = 'Error in data'
+    if ans == temp: 
+        return noerror
+    else: 
+        return error

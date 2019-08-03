@@ -2,23 +2,23 @@ import socket
 import en_decript as ed
 import noise as noise
 import crc as crc
+import ham as ham
+
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('0.0.0.0', 8080))
 message = 'Connected\n'
 client.send(message.encode())
 from_server = client.recv(4096)
 
+a = ed.str_to_BIN('pepapls')
 b = ed.bitarray_to_BIN(from_server)
 
-ans = crc.crc(b, "1001") 
-print("Remainder after decoding is->"+ans) 
-    
-# If remainder is all zeros then no error occured 
-temp = "0" * (len("1001") - 1) 
-noerror = 'No error FOUND'
-error = 'Error in data'
-if ans == temp: 
-    client.send(noerror.encode()) 
-else: 
-    client.send(error.encode()) 
+crcSays = crc.crc(b)
+hamming = ham.hamming(b)
+hammingB = ham.hamming_to_BIT(hamming)
+print("CRC: " + crcSays)
+print(ham.compare_efficency(a, hammingB))
+
+client.send(crcSays.encode())
+
 client.close()

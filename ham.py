@@ -51,20 +51,20 @@ def hamming(bits):
                 t = lst[int(l_index): int(u_index)]
             
             total = total + sum(int(e) for e in t)
-            print(t, j)
+            #print(t, j)
             j = j + 2
         if total%2 > 0:
             lst[int(k) - 1] = 1
-            print("El elemento es: " + str(lst[int(k)-1]) + " " + str(k))
+            #print("El elemento es: " + str(lst[int(k)-1]) + " " + str(k))
         i = i + 1
     if errorthBit>=1:
-        print ("error in " + str(errorthBit) + " bit after correction data is " )
+        print ("Hamming: error in " + str(errorthBit) + " bit after correction data is " )
         if lst[int(errorthBit - 1)] =='0' or lst[int(errorthBit - 1)] == 0:
             lst[int(errorthBit - 1)] = '1'
         else:
             lst[int(errorthBit - 1)] = '0'
     else:
-        print("NO ERR") 
+        print("Hamming: NO ERROR") 
     i=0
     j=0
     k=0
@@ -82,7 +82,7 @@ def hamming(bits):
 
 def hamming_to_BIT(haming):
     total = ''
-    for value in a:
+    for value in haming:
         total = total + value
     return total
 
@@ -100,10 +100,10 @@ def compare_efficency(original, noise_corrected):
     return efficiency
 
 # hacer hamming sobre un string con noise
-a = hamming('0110000001011010111000101100001011100000110110001111111')
+#a = hamming('0110000001011010111000101100001011100000110110001111111')
 
 # convertir a un arreglo de bits
-b = hamming_to_BIT(a)
+#b = hamming_to_BIT(a)
 
 # comparar que tan efectivo fue hamming
-print(compare_efficency('1110000011001010111000001100001011100000110110001110011', b))
+#print(compare_efficency('1110000011001010111000001100001011100000110110001110011', b))
