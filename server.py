@@ -15,7 +15,7 @@ while True:
         from_client += data.decode()
         print (from_client)
         a = ed.str_to_BIN('pepapls lul xd')
-        b = noise.add_noise(a, 0.8)
+        b = noise.add_noise(a, 0.1)
         message = ed.BIN_to_bitarray(b)
         conn.send(message)
     conn.close()
