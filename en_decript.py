@@ -26,14 +26,14 @@ def bitarray_to_BIN(barray):
     b = a[:-1]
     return b
 
-zero = str_to_BIN('pepapls')
-print(zero)
+#zero = str_to_BIN('pepapls')
+#print(zero)
 
-a = BIN_to_bitarray(zero)
-print(a)
+#a = BIN_to_bitarray(zero)
+#print(a)
 
-b = bitarray_to_BIN(a)
-print(b)
+#b = bitarray_to_BIN(a)
+#print(b)
 
-c = BIN_to_str(b)
-print(c)
+#c = BIN_to_str(b)
+#print(c)
