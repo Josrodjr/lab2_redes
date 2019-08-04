@@ -58,13 +58,14 @@ def hamming(bits):
             #print("El elemento es: " + str(lst[int(k)-1]) + " " + str(k))
         i = i + 1
     if errorthBit>=1:
-        print ("Hamming: error in " + str(errorthBit) + " bit after correction data is " )
+        #print ("Hamming: error in " + str(errorthBit) + " bit after correction data is " )
         if lst[int(errorthBit - 1)] =='0' or lst[int(errorthBit - 1)] == 0:
             lst[int(errorthBit - 1)] = '1'
         else:
             lst[int(errorthBit - 1)] = '0'
     else:
-        print("Hamming: NO ERROR") 
+        #print("Hamming: NO ERROR") 
+        print(" ")
     i=0
     j=0
     k=0

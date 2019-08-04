@@ -10,7 +10,7 @@ message = 'Connected\n'
 client.send(message.encode())
 from_server = client.recv(4096)
 
-a = ed.str_to_BIN('pepapls')
+a = ed.str_to_BIN('holaquetal')
 b = ed.bitarray_to_BIN(from_server)
 
 crcSays = crc.crc(b)
